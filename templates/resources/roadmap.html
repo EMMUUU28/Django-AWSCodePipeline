@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+    Talk with PDF
+{% endblock title %}
+
+{% block content %}
+<style>
+    #container {
+        width: 90%; /* Adjust the width as needed */
+        max-width: 900px; /* Maximum width for responsiveness */
+        background-color: #fff; /* White background color */
+        border: 3px solid #6546d2; /* Thicker blue border */
+        border-radius: 15px; /* Rounded corners */
+        padding: 40px; /* Increase padding for a better look */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        margin: auto; /* Center the container horizontally */
+        margin-top: 50px; /* Add some top margin */
+        position: fixed; /* Fix the container position */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center the container precisely */
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: calc(100vh - 100px); /* Set maximum height for responsiveness */
+    }
+
+    h1 {
+        color: #007bff; /* Blue color for the heading */
+        text-align: center;
+        margin-bottom: 20px; /* Add space below the heading */
+    }
+
+    form {
+        margin-top: 20px; /* Add some space between heading and form */
+    }
+
+    .form-group {
+        margin-bottom: 20px; /* Add space between form groups */
+    }
+
+    /* Style for input fields */
+    input[type="file"],
+    textarea {
+        width: 100%;
+        padding: 15px; /* Increase padding for input fields */
+        margin-top: 10px; /* Adjust margin-top for input fields */
+        margin-bottom: 20px; /* Adjust margin-bottom for input fields */
+        border: 1px solid #007bff; /* Blue border color */
+        border-radius: 8px; /* Adjust border-radius for input fields */
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    input[type="file"]:focus,
+    textarea:focus {
+        border-color: #0056b3; /* Darker blue border color on focus */
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div id="content-page" class="content-page">
+    <div class="container-fluid">
+        <div class=" col-sm-12">
+             
+            <div class=" ">
+                
+                <div class="pb-4">
+                    <h1 class="text-start  pt-4">Study Roadmap</h1>
+                
+
+            
+
+
+<form method="POST" action="{% url 'roadmap' %}">
+    {% csrf_token %}
+    <div class="dropdown">
+        <button type="button" id="roadmap" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Choose Subject
+        </button>
+        <input type="hidden" id="selected_roadmap" name="roadmap" value="python"> <!-- Default value, change 'python' to the desired default value -->
+        <ul class="dropdown-menu" aria-labelledby="roadmap">
+            <li><a class="dropdown-item" href="javascript:void(0);" value="frontend">Frontend</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="backend">Backend</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="devops">DevOps</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="android">Android</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="postgresql">PostgreSQL</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="aianddatascientist">AI and Data Scientist</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="blockchain">Blockchain</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="qa">QA</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="softwarearchitect">Software Architect</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="aspnetcore">ASP.NET Core</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="c++">C++</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="flutter">Flutter</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="cybersecurity">Cyber Security</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="uxdesign">UX Design</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="reactnative">React Native</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="gamedeveloper">Game Developer</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="technicalwriter">Technical Writer</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="mlops">MLOps</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="computerscience">Computer Science</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="react">React</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="angular">Angular</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="vue">Vue</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="javascript">JavaScript</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="node.js">Node.js</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="typescript">TypeScript</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="python">Python</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="sql">SQL</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="systemdesign">System Design</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="java">Java</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="springboot">Spring Boot</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="goroadmap">Go Roadmap</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="rust">Rust</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="graphql">GraphQL</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="designandarchitecture">Design and Architecture</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="designsystem">Design System</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="aws">AWS</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="codereview">Code Review</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="docker">Docker</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="kubernetes">Kubernetes</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="mongodb">MongoDB</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="promptengineering">Prompt Engineering</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="bestpractices">Best Practices</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="frontendperformance">Frontend Performance</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="apisecurity">API Security</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="codereviews">Code Reviews</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="questions">Questions</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="javascript">JavaScript</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="node.js">Node.js</a></li>
+<li><a class="dropdown-item" href="javascript:void(0);" value="react">React</a></li>
+
+        </ul>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<script>
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', event => {
+            const selectedValue = event.target.getAttribute('value'); // Use getAttribute to get the value attribute
+            document.getElementById('selected_roadmap').value = selectedValue;
+            document.getElementById('roadmap').innerText = selectedValue; // Optional: Update button text
+        });
+    });
+</script>
+
+                </div>
+                
+                  
+                  
+                <iframe src="{{ url }}" height="1500" width="1200"></iframe>            
+            </div>
+          </div>
+       
+          
+          <div class="">
+            <div class="iq-card" >
+                <h1 class="text-start pt-2">PDF Chat</h1>
+                
+                <form method="post"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <textarea name="user_question" rows="4" class="form-control" placeholder="Ask a question"></textarea>
+                    </div>
+                    <button type="submit" class="btn dark-icon btn-primary mb-3">Submit</button>
+                    <button
+                    type="button"
+                    class="btn btn-primary mb-3"
+                    aria-expanded="false">
+                    Download Roadmap PDF
+                  </button>
+                </form>
+        
+                {% if result %}
+                    <div class="mt-4">
+                        <h2>Response:</h2>
+                        <p id="response-text" class="lead">{{ result|linebreaksbr }}</p>
+                    </div>
+                {% endif %}
+        
+                {% if related_content %}
+                    <div class="mt-4">
+                        <h2>Related Content:</h2>
+                        <ul class="list-group">
+                            {% for content in related_content %}
+                                <li class="list-group-item">{{ content }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var responseTextElement = document.getElementById('response-text');
+        if (responseTextElement) {
+            // Split the response text by '**' and join with '<br>' to put each part on a new line
+            responseTextElement.innerHTML = responseTextElement.innerHTML.split('*').join('');
+        }
+    });
+</script>
+
+{% endblock %}

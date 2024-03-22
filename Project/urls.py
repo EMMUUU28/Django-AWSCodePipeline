@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainApp.urls')),
     path('', include('jobApp.urls')),
+    path('', include('resourceApp.urls')),
+
 ]
 
 if settings.DEBUG:
