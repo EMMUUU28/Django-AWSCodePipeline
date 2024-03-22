@@ -8,8 +8,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     # path("resume/", views.talkpdf, name="talkpdf"),
     path('roadmap/',views.roadmap,name='roadmap'),
-    path('test/',views.roadmap1,name='roadmap1'),
-    # path('chat', views.community_chat, name='community_chat'),
+    path('downloadroadmap/',views.downloadroadmap,name='downloadroadmap'),
+    path('resumeassistant/', views.resumeassistant, name='resumeassistant'),
     # path('ask', views.ask_question, name='ask_question'),
     # path('answer/<int:question_id>', views.answer_question, name='answer_question'),
     # path('comment/<int:answer_id>', views.comment_answer, name='comment_answer'),
