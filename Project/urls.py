@@ -25,6 +25,8 @@ urlpatterns = [
     path('', include('jobApp.urls')),
     path('', include('resourceApp.urls')),
     path('', include('mentorApp.urls')),
+    path('', include('authApp.urls')),
+
 
 
 ]
