@@ -5,8 +5,6 @@ import requests
 from django.shortcuts import render
 import os
 import google.generativeai as genai
-from dotenv import load_dotenv
-from langchain.llms import OpenAI
 from PyPDF2 import PdfReader
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -14,6 +12,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from dotenv import load_dotenv
 
 load_dotenv()
 genai.configure(api_key=(os.getenv("GOOGLE_API_KEY")))
@@ -32,7 +31,6 @@ def downloadroadmap(request):
         return HttpResponse("Failed to download PDF", status=response.status_code)
 
 def roadmap(request):
-    
     if request.method == 'POST':
         selected_roadmap = request.POST.get('roadmap', 'python')
         # Use selected_roadmap as needed
@@ -144,7 +142,7 @@ def get_text_chunks(text):
     chunks = text_splitter.split_text(text)
     return chunks
 
-def replace_newlines_with_br(text):
+def replace_newlines(text):
     return text.replace('\n', '**')
 
 def resumeassistant(request):
@@ -160,3 +158,11 @@ def resumeassistant(request):
         final_result = result['output_text']
         return render(request,'resources/resume.html',{'response_text':final_result})
     return render(request,'resources/resume.html')
+
+
+
+
+
+
+
+

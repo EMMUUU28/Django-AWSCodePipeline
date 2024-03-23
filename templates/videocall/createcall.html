@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+
+{% block title %} 
+    Mentor's Chat
+{% endblock title %}
+
+{% block content %}
+<div class="p-4">
+    <h1>Create Room</h1>
+    <div class="col-xxl">
+        <div class="card mb-4">
+          <div class="card-header d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Create Personal Room </h5>
+          </div>
+          <div class="card-body">
+            <form action="{% url 'createmeet' %}" method="post">
+                {% csrf_token %}
+                <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Host Name</label>
+                <div class="col-sm-10">
+                  <input required ="text" name="host_name" class="form-control" id="basic-default-name" placeholder="John Doe" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-company">Meet For</label>
+                <div class="col-sm-10">
+                  <input
+                  required
+                  name="meet_for"
+                    type="text"
+                    class="form-control"
+                    id="basic-default-company"
+                    placeholder="ACME Inc." />
+                </div>
+              </div>
+             
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-message">Description</label>
+                <div class="col-sm-10">
+                  <textarea
+                    name="description"
+                    id="basic-default-message"
+                    class="form-control"
+                    placeholder="Hi, Do you have a moment to talk Joe?"
+                    aria-label="Hi, Do you have a moment to talk Joe?"
+                    aria-describedby="basic-icon-default-message2"></textarea>
+                </div>
+              </div>
+              <div class="row justify-content-end">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock %}
+

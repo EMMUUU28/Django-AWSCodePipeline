@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainApp',
     'jobApp',
-    'resourceApp'
+    'resourceApp',
+    'mentorApp',
 ]
 
 MIDDLEWARE = [

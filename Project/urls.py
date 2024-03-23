@@ -24,6 +24,8 @@ urlpatterns = [
     path('', include('mainApp.urls')),
     path('', include('jobApp.urls')),
     path('', include('resourceApp.urls')),
+    path('', include('mentorApp.urls')),
+
 
 ]
 
