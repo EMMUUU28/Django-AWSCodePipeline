@@ -10,7 +10,7 @@ jsonpointer
 langchain
 langchain-community==0.0.29
 langchain-core
-langchain_google_genai
+langchain-google-genai==0.0.11
 langchain-text-splitters
 langsmith
 oauthlib
