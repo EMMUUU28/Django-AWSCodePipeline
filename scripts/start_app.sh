@@ -1,6 +1,6 @@
 #!/usr/bin/bash 
 
-sed -i 's/\[]/\["43.205.216.211"]/' /home/ubuntu/Project/Project/settings.py
+sed -i 's/\[]/\["43.205.216.211"]/' /home/ubuntu/Django-AWSCodePipeline/Project/settings.py
 
 python manage.py migrate 
 python manage.py makemigrations     

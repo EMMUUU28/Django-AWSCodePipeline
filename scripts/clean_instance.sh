@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo rm -rf /home/ubuntu/Project/*
+sudo rm -rf /home/ubuntu/Django-AWSCodePipeline/*

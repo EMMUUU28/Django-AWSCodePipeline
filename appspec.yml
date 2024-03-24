@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files: 
   - source: /
-    destination: /home/ubuntu/Project
+    destination: /home/ubuntu/Django-AWSCodePipeline
 permissions:
-  - object: /home/ubuntu/Project
+  - object: /home/ubuntu/Django-AWSCodePipeline
     owner: ubuntu
     group: ubuntu
 hooks:

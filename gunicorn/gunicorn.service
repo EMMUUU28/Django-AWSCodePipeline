@@ -5,8 +5,8 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/Project
-ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/Project/Project/Project.sock Project.wsgi:application
+WorkingDirectory=/home/ubuntu/Django-AWSCodePipeline
+ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/Django-AWSCodePipeline/Project/Project.sock Project.wsgi:application
 
        
 [Install]
