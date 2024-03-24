@@ -1,10 +1,48 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<div class="p-4">
+  <h1>Jobs list</h1>
+  <div class="row mb-5">
+    {% for job in job_list %}
+    <div class="col-md-6 col-lg-4 mb-3">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <!-- <div class="col-md-4">
+            <img
+              class="card-img card-img-left"
+              src="{{ job.thumbnail }}"
+              alt="Card image"
+            />
+          </div> -->
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ job.title }}</h5>
+              <p class="card-text">{{ job.company_name }}</p>
+              <p class="card-text">{{ job.location }}</p>
 
+              <ul>
+                {% for ext in job.extensions %}
+                <li>{{ ext }}</li>
+                {% endfor %}
+              </ul>
 
-{% block content %}
-<div class="p-4 ">
-    
-    <p> Hi , THis is the jobs display page</p>
-
+              <h6>Related Links:</h6>
+              <ul>
+                {% for link in job.related_links %}
+                <li>
+                  <a href="{{ link.link }}" target="_blank">{{ link.text }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
+
 {% endblock content %}
