@@ -12,7 +12,7 @@ colorama==0.4.6
 cryptography==42.0.5
 dataclasses-json==0.6.4
 defusedxml==0.8.0rc2
-Django==5.0.3
+Django==4.2
 frozenlist==1.4.1
 google-ai-generativelanguage==0.4.0
 google-api-core==2.18.0
