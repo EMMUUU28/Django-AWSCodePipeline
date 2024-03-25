@@ -7,11 +7,6 @@ google-search-results
 googleapis-common-protos
 jsonpatch
 jsonpointer
-langchain
-langchain-community==0.0.29
-langchain-core
-langchain-google-genai
-langchain-text-splitters
 langsmith
 oauthlib
 PyPDF2
